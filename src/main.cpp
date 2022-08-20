@@ -94,12 +94,12 @@ int main(int argc, char** argv) {
 
     qDebug("Starting Spotify Tray (PID %lu)", pid);
 
-    bool show_window = false;
+    bool show_window = true;
 
     // This is not proper argument parsing, as in general arguments are passed to Spotify
     while (argc > 1) {
-        if (!strcmp(argv[1], "--show-window")) {
-            show_window = true;
+        if (!strcmp(argv[1], "--no-show-window")) {
+            show_window = false;
             argv[1] = argv[0]; ++argv; --argc;
         } else {
             if (!strcmp(argv[1], "--")) {
